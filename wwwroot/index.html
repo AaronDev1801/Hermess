@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Hermess Internal Messaging</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+</head>
+<body>
+  <!-- Login -->
+  <div class="container" id="loginContainer">
+    <h2>Hermess Login</h2>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <button onclick="login()">Login</button>
+    <p style="text-align:center;">
+      <a href="#" onclick="toggleRegister()">¿No tienes cuenta? Regístrate aquí</a>
+    </p>
+  </div>
+
+  <!-- Registro -->
+  <div class="container" id="registerContainer" style="display:none;">
+    <h2>Hermess Registro</h2>
+    <input type="email" id="regEmail" placeholder="Email" required />
+    <input type="password" id="regPassword" placeholder="Password" required />
+    <button onclick="register()">Registrarse</button>
+    <p style="text-align:center;">
+      <a href="#" onclick="toggleLogin()">¿Ya tienes cuenta? Inicia sesión</a>
+    </p>
+  </div>
+
+  <!-- Dashboard principal -->
+  <div class="dashboard" id="dashboardContainer" style="display:none;">
+    <div class="sidebar">
+      <h3>Hermess</h3>
+      <button onclick="showSection('inbox')">📥 Inbox</button>
+      <button onclick="showSection('sent')">📤 Enviados</button>
+      <button onclick="showSection('contacts')">👥 Contactos</button>
+      <button onclick="showSection('compose')">✍️ Redactar</button>
+      <button onclick="showSection('library')">📂 Biblioteca</button>
+      <button onclick="logout()">🚪 Logout</button>
+    </div>
+    <div class="main">
+      <!-- Banner de notificaciones en tiempo real -->
+      <div id="notifBanner" style="display:none; background:#f0a500; color:#000; padding:12px 20px; border-radius:8px; margin-bottom:15px; font-weight:600;"></div>
+
+      <div id="inboxSection" class="section"> 
+        <h2>Inbox</h2> 
+        <div id="inboxMessages"></div> 
+      </div>
+
+      <div id="sentSection" class="section" style="display:none;"> 
+        <h2>Enviados</h2> 
+        <div id="sentMessages"></div> 
+      </div>
+
+      <div id="contactsSection" class="section" style="display:none;"> 
+        <h2>Contactos</h2> 
+        <div id="contactsList"></div> 
+      </div>
+
+      <!-- Redactar -->
+      <div id="composeSection" class="section" style="display:none;">
+        <h2>Redactar mensaje</h2>
+
+        <!-- Botones de elección -->
+        <div class="compose-options">
+          <button onclick="showComposeForm('direct')">📥 Mensaje Directo</button>
+          <button onclick="showComposeForm('broadcast')">📢 Mensaje Masivo</button>
+        </div>
+
+        <!-- Formulario Directo -->
+        <div id="directForm" style="display:none;">
+          <select id="receiverSelect">
+            <option value="">Selecciona destinatario...</option>
+          </select>
+          <textarea id="directContent" placeholder="Escribe tu mensaje..."></textarea>
+          <button onclick="document.getElementById('directFileInput').click()">📎 Adjuntar archivo</button>
+          <input type="file" id="directFileInput" multiple style="display:none;" />
+          <button onclick="prepareSend('direct')">Enviar Directo</button>
+        </div>
+
+        <!-- Formulario Broadcast -->
+        <div id="broadcastForm" style="display:none;">
+          <textarea id="broadcastContent" placeholder="Escribe tu mensaje masivo..."></textarea>
+          <button onclick="document.getElementById('broadcastFileInput').click()">📎 Adjuntar archivo</button>
+          <input type="file" id="broadcastFileInput" multiple style="display:none;" />
+          <button onclick="prepareSend('broadcast')">Enviar Broadcast</button>
+        </div>
+      </div>
+
+      <div id="librarySection" class="section" style="display:none;"> 
+        <h2>Biblioteca</h2> 
+        <div id="libraryFiles"></div> 
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
