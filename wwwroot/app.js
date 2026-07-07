@@ -4,8 +4,8 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 let connection = null
 
 const supabase = createClient(
-  "https://pdyeacbfznurpewcabmr.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBkeWVhY2Jmem51cnBld2NhYm1yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMyMjMyMjAsImV4cCI6MjA5ODc5OTIyMH0.LFxGgLg5uH3beB6VeeN1wc7mafIlFk7ucaOMrId5kVg"
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_KEY
 )
 
 //Evita crash si body está vacío
