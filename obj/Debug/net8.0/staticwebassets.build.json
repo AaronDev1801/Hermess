@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "N0tBrrPFVuzxDLhHY1kc9lIFjPmbkF/zWnNK7zBj974=",
+  "Source": "Hermess",
+  "BasePath": "_content/Hermess",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Hermess\\wwwroot",
+      "Source": "Hermess",
+      "ContentRoot": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\",
+      "BasePath": "_content/Hermess",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\app.js",
+      "SourceId": "Hermess",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\",
+      "BasePath": "_content/Hermess",
+      "RelativePath": "app.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.js"
+    },
+    {
+      "Identity": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\index.html",
+      "SourceId": "Hermess",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\",
+      "BasePath": "_content/Hermess",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\style.css",
+      "SourceId": "Hermess",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\",
+      "BasePath": "_content/Hermess",
+      "RelativePath": "style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\style.css"
+    }
+  ]
+}

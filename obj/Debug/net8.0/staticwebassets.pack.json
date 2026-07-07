@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\app.js",
+      "PackagePath": "staticwebassets\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\50588\\Desktop\\Cosas Aaron\\Cosas de la uni\\Codigos\\Hermess\\Hermess\\wwwroot\\style.css",
+      "PackagePath": "staticwebassets\\style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Hermess.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Hermess.props",
+      "PackagePath": "build\\Hermess.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Hermess.props",
+      "PackagePath": "buildMultiTargeting\\Hermess.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Hermess.props",
+      "PackagePath": "buildTransitive\\Hermess.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

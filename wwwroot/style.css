@@ -17,8 +17,8 @@
 body {
   font-family: var(--font-family);
   background-color: var(--bg-primary);
-  background-image: radial-gradient(circle at 15% 50%, rgba(255,179,0,0.05), transparent 25%),
-                    radial-gradient(circle at 85% 30%, rgba(255,255,255,0.02), transparent 25%);
+  background-image: radial-gradient(circle at 15% 50%, rgba(255, 179, 0, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.02), transparent 25%);
   color: var(--text-primary);
   margin: 0;
   padding: 0;
@@ -26,22 +26,23 @@ body {
   overflow: hidden;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-primary);
 }
+
 ::-webkit-scrollbar-thumb {
   background: #333945;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
 }
 
-/* Auth Containers (Login & Register) */
 .container {
   width: 100%;
   max-width: 420px;
@@ -52,13 +53,14 @@ body {
   padding: 40px;
   border-radius: 16px;
   border: 1px solid var(--border-color);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 40px var(--accent-glow);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 40px var(--accent-glow);
   transform: translateY(0);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .container:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 50px var(--accent-glow);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 50px var(--accent-glow);
 }
 
 h2 {
@@ -69,21 +71,24 @@ h2 {
   letter-spacing: -0.5px;
 }
 
-/* Form Elements */
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 14px;
   margin: 12px 0;
   border-radius: 8px;
   border: 1px solid var(--border-color);
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   color: var(--text-primary);
   font-family: var(--font-family);
   font-size: 14px;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: none;
   border-color: var(--accent-color);
   box-shadow: 0 0 10px var(--accent-glow);
@@ -130,7 +135,6 @@ a:hover {
   color: #fff;
 }
 
-/* Dashboard Layout */
 .dashboard {
   display: flex;
   height: 100vh;
@@ -213,7 +217,6 @@ a:hover {
   border-radius: 2px;
 }
 
-/* Cards & Messages */
 .msg-card {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -227,7 +230,7 @@ a:hover {
 
 .msg-card:hover {
   transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2), 0 0 15px var(--accent-glow);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 15px var(--accent-glow);
 }
 
 .msg-card p {
@@ -259,13 +262,18 @@ a:hover {
   letter-spacing: 0.5px;
 }
 
-/* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Notifications */
 #notifBanner {
   animation: slideDown 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   box-shadow: 0 5px 15px var(--accent-glow);
@@ -275,12 +283,19 @@ a:hover {
 }
 
 @keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Lists (Contacts & Library) */
-#contactsList p, #libraryFiles p {
+#contactsList p,
+#libraryFiles p {
   background: var(--bg-secondary);
   padding: 15px 20px;
   border-radius: 8px;
@@ -292,17 +307,18 @@ a:hover {
   transition: background 0.2s, transform 0.2s;
 }
 
-#contactsList p:hover, #libraryFiles p:hover {
-  background: rgba(255,255,255,0.05);
+#contactsList p:hover,
+#libraryFiles p:hover {
+  background: rgba(255, 255, 255, 0.05);
   transform: translateX(5px);
 }
 
-/* Compose Options Buttons */
 .compose-options {
   display: flex;
   gap: 15px;
   margin-bottom: 25px;
 }
+
 .compose-options button {
   flex: 1;
   background: var(--bg-secondary);
@@ -310,7 +326,9 @@ a:hover {
   border: 1px solid var(--border-color);
   box-shadow: none;
 }
-.compose-options button:hover, .compose-options button.active {
+
+.compose-options button:hover,
+.compose-options button.active {
   border-color: var(--accent-color);
   color: var(--accent-color);
   background: rgba(255, 179, 0, 0.05);

@@ -3,10 +3,9 @@ using Supabase.Postgrest.Attributes;
 
 namespace Hermess.Models
 {
-    [Table("messages")] // nombre de tu tabla en Supabase
+    [Table("messages")] 
     public class Message : BaseModel
     {
-        // 👇 Constructor vacío requerido por Supabase
         public Message() { }
 
         [PrimaryKey("id", shouldInsert: false)]

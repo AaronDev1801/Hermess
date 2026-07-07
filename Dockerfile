@@ -1,8 +1,7 @@
-# 1. Usamos la imagen oficial del SDK de .NET para compilar
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copiar el archivo de proyecto y restaurar dependencias
+# Copiar el archivo de proyecto/restaurar dependencias
 COPY ["Hermess.csproj", "./"]
 RUN dotnet restore "./Hermess.csproj"
 
@@ -10,12 +9,12 @@ RUN dotnet restore "./Hermess.csproj"
 COPY . .
 RUN dotnet publish "Hermess.csproj" -c Release -o /app/publish
 
-# 2. Usamos la imagen ligera de ASP.NET para correr la app
+# Imagen de ASP.NET para correr la app
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=build /app/publish .
 
-# Exponer el puerto que usará la plataforma cloud
+# Puerto
 EXPOSE 8080
 ENV ASPNETCORE_URLS=http://+:8080
 

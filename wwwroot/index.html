@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Hermess Internal Messaging</title>
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
 </head>
+
 <body>
   <!-- Login -->
   <div class="container" id="loginContainer">
@@ -34,30 +36,32 @@
   <div class="dashboard" id="dashboardContainer" style="display:none;">
     <div class="sidebar">
       <h3>Hermess</h3>
-      <button onclick="showSection('inbox')">📥 Inbox</button>
-      <button onclick="showSection('sent')">📤 Enviados</button>
-      <button onclick="showSection('contacts')">👥 Contactos</button>
-      <button onclick="showSection('compose')">✍️ Redactar</button>
-      <button onclick="showSection('library')">📂 Biblioteca</button>
-      <button onclick="logout()">🚪 Logout</button>
+      <button onclick="showSection('inbox')"> Inbox</button>
+      <button onclick="showSection('sent')"> Enviados</button>
+      <button onclick="showSection('contacts')"> Contactos</button>
+      <button onclick="showSection('compose')"> Redactar</button>
+      <button onclick="showSection('library')"> Biblioteca</button>
+      <button onclick="logout()">Logout</button>
     </div>
     <div class="main">
       <!-- Banner de notificaciones en tiempo real -->
-      <div id="notifBanner" style="display:none; background:#f0a500; color:#000; padding:12px 20px; border-radius:8px; margin-bottom:15px; font-weight:600;"></div>
-
-      <div id="inboxSection" class="section"> 
-        <h2>Inbox</h2> 
-        <div id="inboxMessages"></div> 
+      <div id="notifBanner"
+        style="display:none; background:#f0a500; color:#000; padding:12px 20px; border-radius:8px; margin-bottom:15px; font-weight:600;">
       </div>
 
-      <div id="sentSection" class="section" style="display:none;"> 
-        <h2>Enviados</h2> 
-        <div id="sentMessages"></div> 
+      <div id="inboxSection" class="section">
+        <h2>Inbox</h2>
+        <div id="inboxMessages"></div>
       </div>
 
-      <div id="contactsSection" class="section" style="display:none;"> 
-        <h2>Contactos</h2> 
-        <div id="contactsList"></div> 
+      <div id="sentSection" class="section" style="display:none;">
+        <h2>Enviados</h2>
+        <div id="sentMessages"></div>
+      </div>
+
+      <div id="contactsSection" class="section" style="display:none;">
+        <h2>Contactos</h2>
+        <div id="contactsList"></div>
       </div>
 
       <!-- Redactar -->
@@ -66,8 +70,8 @@
 
         <!-- Botones de elección -->
         <div class="compose-options">
-          <button onclick="showComposeForm('direct')">📥 Mensaje Directo</button>
-          <button onclick="showComposeForm('broadcast')">📢 Mensaje Masivo</button>
+          <button onclick="showComposeForm('direct')"> Mensaje Directo</button>
+          <button onclick="showComposeForm('broadcast')"> Mensaje Masivo</button>
         </div>
 
         <!-- Formulario Directo -->
@@ -90,13 +94,14 @@
         </div>
       </div>
 
-      <div id="librarySection" class="section" style="display:none;"> 
-        <h2>Biblioteca</h2> 
-        <div id="libraryFiles"></div> 
+      <div id="librarySection" class="section" style="display:none;">
+        <h2>Biblioteca</h2>
+        <div id="libraryFiles"></div>
       </div>
     </div>
   </div>
 
   <script type="module" src="app.js"></script>
 </body>
+
 </html>

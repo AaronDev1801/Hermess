@@ -71,7 +71,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             )
         };
 
-        // 🔹 Permite que SignalR extraiga el token del query string (WebSockets)
+        //Permite que SignalR extraiga el token del query string (WebSockets)
         options.Events = new JwtBearerEvents
         {
             OnMessageReceived = context =>
@@ -91,7 +91,7 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// 🔹 Middleware
+//Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -100,25 +100,25 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-// 🔹 Servir frontend desde wwwroot (ANTES del routing)
+//Servir frontend desde wwwroot (ANTES del routing)
 app.UseDefaultFiles();
 app.UseStaticFiles();
 
-// 🔹 Orden correcto del pipeline
+// Orden correcto del pipeline
 app.UseRouting();
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 
-// 🔹 Endpoint de prueba
+//Endpoint de prueba (Ya no sabia cual era la razon del error, si no llegaba a APi u otra cosa)
 app.MapGet("/ping", () => "Hermess backend activo ✅")
    .WithName("Ping")
    .WithOpenApi();
 
-// 🔹 Controladores
+//Controladores
 app.MapControllers();
 
-// 🔹 SignalR Hub
+//SignalR Hub
 app.MapHub<ChatHub>("/chatHub");
 
 app.Run();

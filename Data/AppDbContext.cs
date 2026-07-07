@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Hermess.Models; // importa tus modelos
+using Hermess.Models;
 
 namespace Hermess.Data
 {

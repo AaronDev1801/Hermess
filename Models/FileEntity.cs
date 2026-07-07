@@ -3,10 +3,9 @@ using Supabase.Postgrest.Attributes;
 
 namespace Hermess.Models
 {
-    [Table("files")] // 👈 nombre de tu tabla en Supabase
+    [Table("files")]
     public class FileEntity : BaseModel
     {
-        // 👇 Constructor vacío requerido por Supabase
         public FileEntity() { }
 
         [PrimaryKey("id")]
