@@ -1,0 +1,62 @@
+create table users (
+  id uuid primary key,
+  email text unique not null,
+  display_name text
+);
+
+create table messages (
+  id uuid primary key default gen_random_uuid(),
+  sender_id uuid references users(id) on delete cascade,
+  receiver_id uuid references users(id) on delete cascade,
+  content text not null,
+  created_at timestamp default now(),
+  is_massive boolean default false
+);
+
+create table files (
+  id uuid primary key default gen_random_uuid(),
+  owner_id uuid references users(id) on delete cascade,
+  message_id uuid references messages(id) on delete cascade,
+  file_url text not null,
+  file_type text check (file_type in ('image','video','audio','document')),
+  created_at timestamp default now()
+);
+
+--Asegurar que Row Level Security está activado en las tablas
+alter table users enable row level security;
+alter table messages enable row level security;
+alter table files enable row level security;
+
+--Políticas para 'users' (Todos los usuarios logueados pueden ver la lista de contactos)
+create policy "Usuarios son visibles" on users for select using (true);
+
+--Políticas para 'messages' (Inbox y Enviados)
+--Un usuario puede VER el mensaje si es el remitente, el destinatario, o si es un mensaje masivo
+create policy "Ver mensajes propios o masivos" on messages for select 
+using (auth.uid() = sender_id or auth.uid() = receiver_id or is_massive = true);
+
+--Políticas para 'files' (Biblioteca)
+create policy "Ver archivos propios" on files for select 
+using (auth.uid() = owner_id);
+
+-- Trigger para sincronizar auth.users con public.users
+create or replace function public.handle_new_user()
+returns trigger
+language plpgsql
+security definer set search_path = public
+as $$
+begin
+  insert into public.users (id, email)
+  values (new.id, new.email);
+  return new;
+end;
+$$;
+
+drop trigger if exists on_auth_user_created on auth.users;
+create trigger on_auth_user_created
+  after insert on auth.users
+  for each row execute procedure public.handle_new_user();
+
+insert into public.users (id, email)
+select id, email from auth.users
+on conflict (id) do nothing;
